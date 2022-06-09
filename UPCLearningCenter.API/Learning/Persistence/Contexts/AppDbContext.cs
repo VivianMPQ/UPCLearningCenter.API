@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UPCLearningCenter.API.Learning.Domain.Models;
+using UPCLearningCenter.API.Shared.Extensions;
 
 namespace UPCLearningCenter.API.Learning.Persistence.Contexts;
 //llamamos a Dbcontext es importante instalar los paquetes primero
@@ -9,7 +10,7 @@ public class AppDbContext: DbContext
 {
     private DbSet<Category>? categories;
 
-    public DbSet<Category> Forecasts {
+    public DbSet<Category> Categories {
         get => GetContext(categories);
         set => categories = value;
     }
@@ -26,7 +27,7 @@ public class AppDbContext: DbContext
         CategoryEntity.Property(p => p.Name).IsRequired();
 //es necesario que sea en formato snake case. recordemos que en shared -< extensions
 //implementamos el formato
-        
+        builder.UseSnakeCase();
     }
     private static T GetContext<T>(T? ctx) {
         if (ctx == null) throw new NullReferenceException();
