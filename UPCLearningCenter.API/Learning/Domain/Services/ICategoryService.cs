@@ -3,7 +3,7 @@ using UPCLearningCenter.API.Learning.Domain.Services.Comunication;
 
 namespace UPCLearningCenter.API.Learning.Domain.Services;
 
-public class ICategoryService
+public interface ICategoryService
 {
     Task<IEnumerable<Category>> ListAsync();
     Task<CategoryResponse> SaveAsync(Category category);
