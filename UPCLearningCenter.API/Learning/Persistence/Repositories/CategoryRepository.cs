@@ -19,11 +19,11 @@ public class CategoryRepository: BaseRepository, ICategoryRepository
         await context.Categories.AddAsync(category);
     }
 
-    public async Task<Category> FinByIdAsync(long id)
+    public async Task<Category?> FinByIdAsync(long id)
     {
         return await context.Categories.FindAsync(id);
     }
-
+    
     public void Update(Category category)
     {
         context.Categories.Update(category);
