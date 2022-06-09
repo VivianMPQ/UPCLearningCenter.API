@@ -8,8 +8,8 @@ namespace UPCLearningCenter.API.Learning.Controllers;
 
 //decoramos
 [ApiController]
-[Route("[controller]")]  //  ./Categories
-public class CategoriesController: ControllerBase
+[Route("[controller]")] //  ./Categories
+public class CategoriesController : ControllerBase
 {
     private readonly ICategoryService _categoryService;
     private readonly IMapper _mapper;
@@ -23,10 +23,9 @@ public class CategoriesController: ControllerBase
     }
 
     [HttpGet]
-    public async Task<IEnumerable<CategoryResource>> GetAll() {
-        var categories = await _categoryService.ListAsync();
-        return _mapper.Map<IEnumerable<Category>, IEnumerable<CategoryResource>>(categories);
+    public async Task<IEnumerable<CategoryResource>> GetAll()
+    {
+        var Categories = await _categoryService.ListAsync();
+        return _mapper.Map<IEnumerable<Category>, IEnumerable<CategoryResource>>(Categories);
     }
-
-
 }
