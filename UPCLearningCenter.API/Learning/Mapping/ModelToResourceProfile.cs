@@ -6,9 +6,9 @@ namespace UPCLearningCenter.API.Learning.Mapping;
 
 //hereda de profile de automapper
 //creamos un constructor
-public class ModelToResurceProfile : Profile
+public class ModelToResourceProfile : Profile
 {
-    public ModelToResurceProfile()
+    public ModelToResourceProfile()
     {
         CreateMap<Category, CategoryResource>();
     }
