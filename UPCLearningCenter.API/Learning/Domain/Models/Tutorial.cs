@@ -6,7 +6,7 @@ public class Tutorial
     public string Title { get; set; }
     public string Description { get; set; }
 
-    //relacione 
+    //relaciones 
     public long CategoryId { get; set; }
     public Category Category { get; set; }
 }

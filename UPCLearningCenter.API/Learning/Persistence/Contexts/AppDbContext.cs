@@ -8,13 +8,20 @@ namespace UPCLearningCenter.API.Learning.Persistence.Contexts;
 //generamos un constructor
 public class AppDbContext: DbContext
 {
-    private DbSet<Category>? categories;
+    private DbSet<Category>? _categories;
+    private DbSet<Tutorial>? _tutorials;
 
     public DbSet<Category> Categories {
-        get => GetContext(categories);
-        set => categories = value;
+        get => GetContext(_categories);
+        set => _categories = value;
     }
-    
+
+    public DbSet<Tutorial> Tutorials
+    {
+        get => GetContext(_tutorials);
+        set => _tutorials = value;
+    }
+
     public AppDbContext(DbContextOptions options) : base(options) { }
     
     protected override void OnModelCreating(ModelBuilder builder) {
@@ -35,7 +42,7 @@ public class AppDbContext: DbContext
         //definicion de tutorial
         
         var tutorialEntity = builder.Entity<Tutorial>();
-        tutorialEntity.ToTable("tutorials");
+        tutorialEntity.ToTable("Tutorials");
         tutorialEntity.HasKey(p => p.id);
         tutorialEntity.Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
         tutorialEntity.Property(p => p.Title).IsRequired().HasMaxLength(50);
