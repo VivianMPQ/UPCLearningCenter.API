@@ -6,11 +6,11 @@ namespace UPCLearningCenter.API.Learning.Mapping;
 
 //igual que los anteriores es un descendiente d eprofile de automapper
 //generar un constructor
-public class ResourceTomodelProfile : Profile
+public class ResourceToModelProfile : Profile
 {
-    public ResourceTomodelProfile()
+    public ResourceToModelProfile()
     {
-        CreateMap<SaveCategoryResponse, Category>();
+        CreateMap<SaveCategoryResource, Category>();
         CreateMap<SaveTutorialResource, Tutorial>();
     }
 }

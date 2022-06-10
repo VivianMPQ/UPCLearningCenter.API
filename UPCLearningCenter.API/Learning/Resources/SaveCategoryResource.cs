@@ -1,6 +1,6 @@
 ﻿namespace UPCLearningCenter.API.Learning.Resources;
 
-public class SaveCategoryResponse
+public class SaveCategoryResource
 {
     public string Name { get; set; }
 }
