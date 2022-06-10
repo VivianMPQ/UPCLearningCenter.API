@@ -11,5 +11,6 @@ public class ResourceTomodelProfile : Profile
     public ResourceTomodelProfile()
     {
         CreateMap<SaveCategoryResponse, Category>();
+        CreateMap<SaveTutorialResource, Tutorial>();
     }
 }
