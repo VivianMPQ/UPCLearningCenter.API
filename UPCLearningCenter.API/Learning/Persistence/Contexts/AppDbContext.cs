@@ -19,12 +19,28 @@ public class AppDbContext: DbContext
     
     protected override void OnModelCreating(ModelBuilder builder) {
         base.OnModelCreating(builder);
-
-        var CategoryEntity = builder.Entity<Category>();
-        CategoryEntity.ToTable("Categories");
-        CategoryEntity.HasKey(p => p.id);
-        CategoryEntity.Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
-        CategoryEntity.Property(p => p.Name).IsRequired();
+//definicion  de category
+        var categoryEntity = builder.Entity<Category>();
+        categoryEntity.ToTable("Categories");
+        categoryEntity.HasKey(p => p.id);
+        categoryEntity.Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
+        categoryEntity.Property(p => p.Name).IsRequired();
+        
+        //relaciones
+        categoryEntity.HasMany(p => p.Tutorials)
+            .WithOne(p => p.Category)
+            .HasForeignKey(p => p.CategoryId);
+        
+        
+        //definicion de tutorial
+        
+        var tutorialEntity = builder.Entity<Tutorial>();
+        tutorialEntity.ToTable("tutorials");
+        tutorialEntity.HasKey(p => p.id);
+        tutorialEntity.Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
+        tutorialEntity.Property(p => p.Title).IsRequired().HasMaxLength(50);
+        tutorialEntity.Property(p => p.Description).HasMaxLength(120);
+        
 //es necesario que sea en formato snake case. recordemos que en shared -< extensions
 //implementamos el formato
         builder.UseSnakeCase();
