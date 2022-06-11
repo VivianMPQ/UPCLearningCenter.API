@@ -27,5 +27,7 @@ public class TutorialsController: ControllerBase
         return _mapper.Map<IEnumerable<Tutorial>, IEnumerable<TutorialResource>>(tutorials);
 
     }
+    
+    
 
 }
