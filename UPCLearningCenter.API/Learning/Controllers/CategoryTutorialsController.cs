@@ -11,7 +11,7 @@ namespace UPCLearningCenter.API.Learning.Controllers;
 [ApiController]
 [Route("/api/v1/categories/{categoryId}/tutorials")]
 [Produces(MediaTypeNames.Application.Json)]
-public class CategoryTutorialsController
+public class CategoryTutorialsController: ControllerBase
 {
     private readonly ITutorialService _tutorialService;
     private readonly IMapper _mapper;
@@ -21,14 +21,13 @@ public class CategoryTutorialsController
         _tutorialService = tutorialService;
         _mapper = mapper;
     }
-    
+     // [SwaggerOperation(
+        //     Summary = "Get All Tutorials for given Category",
+        //     Description = "Get existing Tutorials associated with the specified Category",
+        //     OperationId = "GetCategoryTutorials",
+        //     Tags = new[] { "Categories" }
+        // )]
     [HttpGet]
-    // [SwaggerOperation(
-    //     Summary = "Get All Tutorials for given Category",
-    //     Description = "Get existing Tutorials associated with the specified Category",
-    //     OperationId = "GetCategoryTutorials",
-    //     Tags = new[] { "Categories" }
-    // )]
     public async Task<IEnumerable<TutorialResource>> GetAllByCategoryIdAsync(long categoryId)
     {
         var tutorials = await _tutorialService.ListByCategoryIdAsync(categoryId);

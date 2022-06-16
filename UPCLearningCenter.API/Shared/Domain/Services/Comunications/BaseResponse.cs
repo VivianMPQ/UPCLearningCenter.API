@@ -1,6 +1,5 @@
 ﻿namespace UPCLearningCenter.API.Shared.Domain.Services.Comunications;
 
-//tiene que ser abstracta porque es generica
 public abstract class BaseResponse<T>
 {
     protected BaseResponse(string message)

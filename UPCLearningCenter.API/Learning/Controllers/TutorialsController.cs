@@ -7,7 +7,7 @@ using UPCLearningCenter.API.Learning.Resources;
 namespace UPCLearningCenter.API.Learning.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/api/v1/[controller]")]
 public class TutorialsController: ControllerBase
 {
     private readonly ITutorialService _tutorialService;

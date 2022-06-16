@@ -17,9 +17,9 @@ public class CategoryService: ICategoryService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<IEnumerable<Category>> ListAsync()
+    public  Task<IEnumerable<Category>> ListAsync()
     {
-        return await _categoryRepository.ListAsync();
+        return  _categoryRepository.ListAsync();
     }
 
     public async Task<CategoryResponse> SaveAsync(Category category)

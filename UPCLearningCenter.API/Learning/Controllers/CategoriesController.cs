@@ -9,7 +9,7 @@ namespace UPCLearningCenter.API.Learning.Controllers;
 
 //decoramos
 [ApiController]
-[Route("[controller]")] //  ./Categories
+[Route("/api/v1/[controller]")] //  ./Categories
 public class CategoriesController : ControllerBase
 {
     private readonly ICategoryService _categoryService;

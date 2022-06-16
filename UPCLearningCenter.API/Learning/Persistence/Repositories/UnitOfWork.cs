@@ -2,7 +2,6 @@
 using UPCLearningCenter.API.Learning.Persistence.Contexts;
 
 namespace UPCLearningCenter.API.Learning.Persistence.Repositories;
-
 public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext context;

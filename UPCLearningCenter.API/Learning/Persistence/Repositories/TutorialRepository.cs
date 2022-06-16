@@ -4,7 +4,6 @@ using UPCLearningCenter.API.Learning.Domain.Repositories;
 using UPCLearningCenter.API.Learning.Persistence.Contexts;
 
 namespace UPCLearningCenter.API.Learning.Persistence.Repositories;
-
 public class TutorialRepository: BaseRepository, ITutorialRepository
 {
     public TutorialRepository(AppDbContext context) : base(context)

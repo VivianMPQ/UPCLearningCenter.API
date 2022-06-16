@@ -3,9 +3,6 @@ using UPCLearningCenter.API.Learning.Domain.Models;
 using UPCLearningCenter.API.Shared.Extensions;
 
 namespace UPCLearningCenter.API.Learning.Persistence.Contexts;
-//llamamos a Dbcontext es importante instalar los paquetes primero
-//de lo contrario no funciona
-//generamos un constructor
 public class AppDbContext: DbContext
 {
     private DbSet<Category>? _categories;
